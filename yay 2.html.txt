@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yay 💕</title>
+
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffccd5, #ffe6eb);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 45px;
+      color: #ff2e63;
+      animation: pop 0.8s ease;
+      transition: all 0.5s ease;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="msg">Achievement Unlocked: Upasana said YES 💖🏆</h1>
+
+  <script>
+    setTimeout(() => {
+      const msg = document.getElementById("msg");
+      msg.style.opacity = "0";
+
+      setTimeout(() => {
+        msg.innerText = "Yay! Now you’re officially my Valentine 😘";
+        msg.style.opacity = "1";
+      }, 500);
+
+    }, 3500);
+  </script>
+</body>
+</html>
