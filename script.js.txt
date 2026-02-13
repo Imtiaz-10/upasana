@@ -1,0 +1,51 @@
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const area = document.querySelector(".buttons-area");
+
+let yesScale = 1;
+let noMoves = 0;
+
+function moveNoButton() {
+  const maxX = area.clientWidth - noBtn.clientWidth;
+  const maxY = area.clientHeight - noBtn.clientHeight;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  noBtn.style.left = `${randomX}px`;
+  noBtn.style.top = `${randomY}px`;
+}
+
+function growYesButton() {
+  yesScale += 0.25; // growth speed
+  yesBtn.style.transform = `scale(${yesScale})`;
+
+  // If yes button becomes huge, make it cover full screen
+  if (yesScale >= 6) {
+    yesBtn.style.position = "fixed";
+    yesBtn.style.left = "0";
+    yesBtn.style.top = "0";
+    yesBtn.style.width = "100vw";
+    yesBtn.style.height = "100vh";
+    yesBtn.style.borderRadius = "0";
+    yesBtn.style.fontSize = "60px";
+    yesBtn.innerText = "YES 💖";
+  }
+}
+
+// On clicking NO
+noBtn.addEventListener("click", () => {
+  noMoves++;
+  moveNoButton();
+  growYesButton();
+});
+
+// Also make NO run away on hover (extra fun)
+noBtn.addEventListener("mouseover", () => {
+  moveNoButton();
+});
+
+// On clicking YES
+yesBtn.addEventListener("click", () => {
+  window.location.href = "yay.html";
+});

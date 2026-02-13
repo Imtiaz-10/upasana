@@ -1,0 +1,68 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe6eb, #ffccd5);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 50px;
+  animation: popIn 1s ease;
+  padding: 0 15px;
+}
+
+.buttons-area {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  margin: auto;
+}
+
+/* Buttons */
+button {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 14px 30px;
+  transition: all 0.25s ease;
+}
+
+/* Yes button */
+#yesBtn {
+  background: #ff2e63;
+  color: white;
+  position: absolute;
+  left: 30px; /* distance from No */
+  top: 70px;
+}
+
+/* No button */
+#noBtn {
+  background: #666;
+  color: white;
+  position: absolute;
+  right: 30px; /* distance from Yes */
+  top: 70px;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
